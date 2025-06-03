@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        h1 {
+            color: green;
+            font-size: 40px;
+            padding: 15px;
+            background-color: black;
+            margin: 0;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 380px;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .item img {
+            width: 200px;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .cart-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        .home-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .home-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .quantity-btn {
+            background-color: #007bff;
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .quantity-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .quantity-display {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            background: white;
+            margin: 0 5px;
+        }
+
+        footer {
+            text-align: center;
+            color: black;
+            padding: 15px;
+            font-size: 20px;
+            background: #ddd;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MENU BY TASTE LAND</h1>
+
+    <!-- Home Button -->
+    <div>
+        <a href="https://piyush-kumar-pu.github.io/My-1st-project-/">
+            <button class="home-btn">Go to Home</button>
+        </a>
+    </div>
+
+    <div class="menu-container">
+        <script>
+            const menuItems = [
+                { name: "Dosa", price: 120, image: "https://media.easemytrip.com/media/Blog/India/636977607425696252/636977607425696252QYiiUU.jpg" },
+                { name: "Paneer Tikka", price: 160, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS38t5rpjBGDx7-VcIS3EQrNJ2lwn0kZdnRQg&s" },
+                { name: "Idli", price: 80, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvLeIdfX6zQ3wL_iJUqJMNwOM-NThwM9Hq3w&s" },
+                { name: "Pulav", price: 100, image: "https://static.toiimg.com/photo/54675684.cms" },
+                { name: "Chicken Biryani", price: 160, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfCZklt778cJAHU3ASF-VqGNQ12oEqxRRVUA&s" },
+                { name: "Chicken Lollipop", price: 180, image: "https://images.herzindagi.info/image/2022/Apr/the-excellent-Indian-non-vegetarian-foods-for-parties.jpg" },
+                { name: "Chicken Tandoori", price: 200, image: "https://blog.swiggy.com/wp-content/uploads/2024/10/Image1_-Tandoori-Chicken-1-1024x538.jpg" },
+                { name: "Fish Fry", price: 220, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg_jkRBlV-TQjXn56fggbgbgi4_j9H2kNmcQ&s" }
+            ];
+
+            menuItems.forEach(item => {
+                document.write(`
+                    <div class="item">
+                        <p style="font-size: 22px;">${item.name}</p>
+                        <img src="${item.image}" alt="${item.name}">
+                        <p class="price">Price - ${item.price}rs</p>
+                        <div class="cart-options">
+                            <button class="quantity-btn" onclick="updateQuantity(this, -1)">-</button>
+                            <span class="quantity-display">1</span>
+                            <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
+                            <button class="btn" onclick="openPopup('${item.name}', ${item.price})">Add to Cart</button>
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
+    </div>
+
+    <footer>
+        <h2>Thank you for being our valuable customer!</h2>
+    </footer>
+
+</body>
+</html>
