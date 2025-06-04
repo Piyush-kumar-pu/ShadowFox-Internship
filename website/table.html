@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Table – THE TASTE LAND</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #b30000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #b30000;
+    }
+
+    .gallery {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #b30000;
+      color: white;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>THE TASTE LAND – Book a Table</h1>
+</header>
+
+<div class="container fade-in">
+  <h2>Reserve Your Table</h2>
+  <form id="bookingForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="phone">Contact Number:</label>
+    <input type="tel" id="phone" required>
+
+    <label for="type">Table Type:</label>
+    <select id="type" onchange="updatePrice()" required>
+      <option value="">-- Select --</option>
+      <option value="family">Family Table (₹1200)</option>
+      <option value="private">Private Table (₹2000)</option>
+    </select>
+
+    <div class="price" id="priceDisplay"></div>
+
+    <label for="date">Booking Date:</label>
+    <input type="date" id="date" required>
+
+    <label for="time">Time:</label>
+    <input type="time" id="time" required>
+
+    <button type="submit">Confirm Booking</button>
+  </form>
+
+  <div class="gallery">
+    <img src="Table.jpeg" alt="Family Table">
+    <img src="table2.jpeg" alt="Private Room">
+    <img src="table3.jpg" alt="Decor">
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 THE TASTE LAND | Booking System
+</footer>
+
+<script>
+  function updatePrice() {
+    const type = document.getElementById("type").value;
+    const price = document.getElementById("priceDisplay");
+
+    if (type === "family") {
+      price.textContent = "Price: ₹1200";
+    } else if (type === "private") {
+      price.textContent = "Price: ₹2000";
+    } else {
+      price.textContent = "";
+    }
+  }
+
+  // Fake submission
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Your table has been booked successfully!");
+    this.reset();
+    document.getElementById("priceDisplay").textContent = "";
+  });
+
+  // Fade-in on scroll
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('.fade-in').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('visible');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
