@@ -182,6 +182,115 @@
         height: auto;
         min-height: 100%;
     }
+    .about-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.card {
+    flex: 1 1 30%;
+    background: #fff3e6;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #d35400;
+    margin-bottom: 10px;
+}
+
+.features {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.features li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc;
+    font-size: 17px;
+}
+
+.why-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.why-card {
+    flex: 1 1 45%;
+    background-color: #e8f8f5;
+    padding: 15px;
+    border-left: 5px solid #1abc9c;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #117a65;
+}
+.chef-card {
+    background-color: #fdf2e9;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chef-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.chef-card h3 {
+    color: #d35400;
+    margin-bottom: 10px;
+  
+}
+
+.legacy-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.legacy-card {
+    flex: 1 1 30%;
+    background-color: #f2f4f4;
+    border-left: 5px solid #3498db;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.legacy-card:hover {
+    transform: translateY(-5px);
+}
+
+.legacy-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
     </style>
    
 </head>
@@ -204,7 +313,7 @@
 </header>
 
 <div class="div1">
-    <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg" alt="Restaurant Image">
+    <img src="bgim.jpeg" alt="Restaurant Image">
     <div class="quote-overlay">
         "Good food is the foundation of genuine happiness." <br> – Auguste Escoffier
     </div>
@@ -212,46 +321,71 @@
 
 <div class="div1">
     <div class="content-section">
-        <h2>About Our Restaurant</h2>
-        <p>Welcome to<b> The Taste Land</b> — where flavor meets emotion. We don’t just serve food; we craft unforgettable dining experiences. Nestled in the heart of flavor and innovation, our restaurant brings together the essence of global cuisines with a touch of traditional Indian warmth.
-            At The Taste Land, we believe in celebrating freshness, creativity, and community. From handpicked organic ingredients to chef-curated fusion dishes, every bite tells a story. Whether you’re craving a cozy family dinner, planning a romantic date, or celebrating a milestone, we’re here to make it magical.
-            <br>
-            What We Offer:<br>
-    
-🍽️ Multi-cuisine menu blending Indian, Continental & Asian flavors
-<br>
-🧑‍🍳 Signature dishes crafted by award-winning chefs
-<br>
-🌱 Farm-to-table ingredients & eco-friendly practices
-<br>
-📱 Smart table booking & live order updates (Coming Soon!)
-<br>
-🎉 Private dining spaces for birthdays, anniversaries & corporate dinners
-<br>
+      <h2>About Our Restaurant</h2>
+  
+      <div class="about-cards">
+        <div class="card">
+          <img src="cooking.png" alt="Flavor Icon">
+          <h3>Flavors with Soul</h3>
+          <p>We don’t just serve food — we create unforgettable dining memories inspired by global cuisines and Indian warmth.</p>
+        </div>
+  
+        <div class="card">
+          <img src="nature.png" alt="Ingredients Icon">
+          <h3>Fresh Ingredients</h3>
+          <p>Only the best goes on your plate — locally sourced, organic, and always fresh.</p>
+        </div>
+  
+        <div class="card">
+          <img src="restaurant.png" alt="Celebration Icon">
+          <h3>Celebrate with Us</h3>
+          <p>Birthdays, romantic dinners, or family gatherings — we make every moment magical.</p>
+        </div>
+      </div>
+  
+      <h2>✨ What We Offer</h2>
+      <ul class="features">
+        <li>🍽️ Multi-cuisine menu: Indian, Continental & Asian</li>
+        <li>👨‍🍳 Award-winning chef’s signature dishes</li>
+        <li>🌱 Farm-to-table freshness & eco-friendly dining</li>
+        <li>📱 Smart table booking & live order tracking (coming soon!)</li>
+        <li>🎉 Private spaces for special events & corporate dinners</li>
+      </ul>
+  
+      <h2>🌟 Why Choose Us?</h2>
+      <div class="why-grid">
+        <div class="why-card">✅ Locally sourced ingredients</div>
+        <div class="why-card">👨‍🍳 Expertly crafted fusion cuisine</div>
+        <div class="why-card">📱 Real-time smart bookings</div>
+        <div class="why-card">🌍 Bamboo-themed, eco-friendly setup</div>
+        <div class="why-card">💬 Live kitchen updates (coming soon)</div>
+      </div>
+    </div>
+  </div>
+    </div>
+</div>
+<h2>👨‍🍳 Our Chefs</h2>
+<div class="chef-card">
+    <img src="chef-hat.png" alt="Chef Icon">
+    <h3>Chef PIYUSH PANDEY</h3>
+    <p>Michelin-starred and internationally trained, Chef Piyush brings innovation to every plate. His mastery of fusion and traditional flavors creates culinary magic for every guest.</p>
+</div>
 
-Come for the taste. Stay for the memories.
-<br>
-The Taste Land – Where every meal is a celebration.
-            
-           </p>
-        <br>
-<section class="why-us">
-  <h2>🌟 Why Choose The Taste Land?</h2>
-  <ul>
-    <li>✅ Handpicked ingredients from local farms</li>
-    <li>👨‍🍳 Fusion cuisine crafted by expert chefs</li>
-    <li>📱 Smart Table Booking with real-time availability</li>
-    <li>🌍 Eco-friendly packaging & bamboo interiors</li>
-    <li>💬 Live dish tracking & chef messages (coming soon)</li>
-  </ul>
-</section>
-<br>
-        <h2>Our Chefs</h2>
-        <p>Our team of expert chefs, led by <b>Chef PIYUSH PANDEY</b> (a Michelin-starred chef), are dedicated to crafting delightful culinary experiences. With years of experience in international and traditional cuisine, our chefs are known for their creativity and expertise.</p>
+<h2>🏆 Our Legacy</h2>
+<div class="legacy-section">
+    <div class="legacy-card">
+        <img src="legacy.png" alt="Legacy Icon">
+        <p><strong>Since 2005</strong> — From a humble family kitchen to a landmark destination for food lovers, our journey is filled with tradition, love, and innovation. We've seen generations grow, celebrations spark, and flavors evolve with you.</p>
+    </div>
 
-        <h2>Our Legacy</h2>
-        <p>Established in 2005,The Taste Land has been serving delicious food for over two decades. Every dish we serve carries the story of our journey — from the early days of handwritten menus and family recipes, to the modern fusion flavors curated by top chefs. At The Taste Land, legacy means honoring our past while embracing the future. For over 20 years, we’ve been part of celebrations, comfort in tough times, and memories made around the table. That’s the legacy we cherish.
-        </p>
+    <div class="legacy-card">
+        <img src="spices.png" alt="Tradition Icon">
+        <p>Our secret? Staying rooted in tradition while embracing change. Our chefs honor the past with handwritten recipes and serve the future with creative twists that excite every palate.</p>
+    </div>
+
+    <div class="legacy-card">
+        <img src="medal_2076207.png" alt="Milestones Icon">
+        <p>20+ years of milestones, awards, and heartwarming guest stories. From our very first dish to our modern smart-kitchen service — this is The Taste Land legacy.</p>
     </div>
 </div>
 <br>
