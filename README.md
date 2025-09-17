@@ -1,4 +1,4 @@
-# 🍽️ Restaurant Table Booking Website
+# 🍽️ Restaurant Table and food  Booking Website
 
 This project was built during my **Shadowfox Internship**.  
 It is a full-featured restaurant booking website where customers can easily reserve tables by selecting:
@@ -6,7 +6,7 @@ It is a full-featured restaurant booking website where customers can easily rese
 - ⏰ Time  
 - 🍴 Type of table  
 
-The goal of this project was to make table booking simple, fast, and user-friendly.
+The goal of this project was to make table and food booking simple, fast, and user-friendly.
 
 ## ✨ Features
 - Responsive design for desktop and mobile  
